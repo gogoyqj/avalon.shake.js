@@ -15,7 +15,7 @@
 	            		, deltax = 0
 	            		, deltay = 0
 	            		, deltaz = 0
-	            	if(Math.abs(lastXYZ.y) > 15 || Math.abs(lastXYZ.x) > 15) addLog(lastXYZ.x, lastXYZ.y, lastXYZ.z)
+	            	if(Math.abs(lastXYZ.y) > 5 || Math.abs(lastXYZ.x) > 5) addLog(lastXYZ.x, lastXYZ.y, lastXYZ.z)
 	            	if(lastXYZ.x === null && lastXYZ.y === null && lastXYZ.z === null) {
 	            		lastXYZ = {
 	            			x: nowXYZ.x,
