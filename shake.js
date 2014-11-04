@@ -10,7 +10,7 @@
 			type: 'devicemotion',
 	        deel: function(elem, fn) {
 	            return function(e) {
-	            	var nowXYZ = e.accelerationIncludingGravity, now
+	            	var nowXYZ = e.acceleration, now
 	            		, pastTime
 	            		, deltax = 0
 	            		, deltay = 0
