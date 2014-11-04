@@ -15,7 +15,7 @@
 	            		, deltax = 0
 	            		, deltay = 0
 	            		, deltaz = 0
-	            	
+	            	addLog(lastXYZ.x, lastXYZ.y, lastXYZ.z)
 	            	if(lastXYZ.x === null && lastXYZ.y === null && lastXYZ.z === null) {
 	            		lastXYZ = {
 	            			x: nowXYZ.x,
