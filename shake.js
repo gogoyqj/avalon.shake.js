@@ -15,7 +15,7 @@
 	            		, deltax = 0
 	            		, deltay = 0
 	            		, deltaz = 0
-	            	if(lastXYZ.y > 0.2 || lastXYZ.x > 0.2) addLog(lastXYZ.x, lastXYZ.y, lastXYZ.z)
+	            	if(lastXYZ.y > 15 || lastXYZ.x > 15) addLog(lastXYZ.x, lastXYZ.y, lastXYZ.z)
 	            	if(lastXYZ.x === null && lastXYZ.y === null && lastXYZ.z === null) {
 	            		lastXYZ = {
 	            			x: nowXYZ.x,
