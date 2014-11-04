@@ -1,7 +1,8 @@
 (function() {
 	function addLog(x,y,z){
 		var p = document.createElement('p')
-		p.innerHTML = "x:" + x + ",y:" + y + ",z:" + z 
+		//p.innerHTML = "x:" + x + ",y:" + y + ",z:" + z 
+		p.innerHTML = x
 		document.getElementById('log').appendChild(p)
 	}
 	if('ondevicemotion' in window) {
@@ -10,12 +11,12 @@
 			type: 'devicemotion',
 	        deel: function(elem, fn) {
 	            return function(e) {
-	            	var nowXYZ = e.acceleration, now
+	            	var nowXYZ = e.accelerationIncludingGravity, now
 	            		, pastTime
 	            		, deltax = 0
 	            		, deltay = 0
 	            		, deltaz = 0
-	            	if(Math.abs(lastXYZ.y) > 5 || Math.abs(lastXYZ.x) > 5) addLog(lastXYZ.x, lastXYZ.y, lastXYZ.z)
+	            	if(Math.abs(nowXYZ.y) > 5 || Math.abs(nowXYZ.x) > 5) addLog(JSON.stringify(e))
 	            	if(lastXYZ.x === null && lastXYZ.y === null && lastXYZ.z === null) {
 	            		lastXYZ = {
 	            			x: nowXYZ.x,
