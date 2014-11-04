@@ -2,7 +2,7 @@
 	function addLog(x,y,z){
 		var p = document.createElement('p')
 		p.innerHTML = "x:" + x + ",y:" + y + ",z:" + z 
-		document.getElementById('log').appendChild(p)
+		document.getElementById('log').insertBefore(p,document.getElementById('log').firstChild)
 	}
 	if('ondevicemotion' in window) {
 		var lastXYZ = {}, threshold = 15, lastTime = Date.now()
