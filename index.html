@@ -9,6 +9,7 @@
 			<a href="#" 
 			   ms-click="hehe" 
 			   ms-mouseenter="haha">trigger test</a>
+		<div id="log"></div>
 		</div>
 		<script>
 			var i = 0
@@ -30,7 +31,7 @@
 				}
 			})
 			avalon.bind(window, 'shake', function(e) {
-				alert('shake')
+				console.log('shake')
 			})
 			// avalon.bind(window, 'devicemotion', function(e) {
 			// 	console.log('devicemotion')
