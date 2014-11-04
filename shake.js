@@ -1,9 +1,4 @@
 (function() {
-	function addLog(x,y,z){
-		var p = document.createElement('p')
-		p.innerHTML = "x:" + x + ",y:" + y + ",z:" + z 
-		document.getElementById('log').appendChild(p)
-	}
 	if('ondevicemotion' in window) {
 		var lastXYZ = {}, threshold = 15, lastTime = Date.now()
 		avalon.eventHooks.shake = {
@@ -15,7 +10,6 @@
 	            		, deltax = 0
 	            		, deltay = 0
 	            		, deltaz = 0
-	            	addLog(lastXYZ.x, lastXYZ.y, lastXYZ.z)
 	            	if(lastXYZ.x === null && lastXYZ.y === null && lastXYZ.z === null) {
 	            		lastXYZ = {
 	            			x: nowXYZ.x,
