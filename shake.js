@@ -43,7 +43,7 @@
 	            		lastXYZ = {
 	            			x: nowXYZ.x,
 	            			y: nowXYZ.y,
-	            			z: ignoreGravityZ
+	            			z: nowXYZ.z
 	            		}
 	            		return
 	            	}
