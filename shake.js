@@ -57,7 +57,7 @@
 	            			if(lastXYZ[direction] * nowXYZ[direction] < 0) {
 	            				direction = (lastXYZ[direction] < 0 ? '-' : '+') + direction
 	            			}
-            				addLog(nowXYZ[direction] - lastXYZ[direction], dictionary[])
+            				addLog(nowXYZ[direction] - lastXYZ[direction], dictionary[direction])
 	            			fn(e)
 	            			lastTime = Date.now()
 	            		}
