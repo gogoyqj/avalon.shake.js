@@ -37,11 +37,12 @@
 	            		now, // 当前时间
 	            		pastTime, // 距离上次devicemotion间隔时间
 	            		direction // 最大增量方向
+	            	nowXYZ.z = nowXYZ.z - 9.8 // 忽略重力加速度的Z
 	            	if(lastXYZ.x === null && lastXYZ.y === null && lastXYZ.z === null) {
 	            		lastXYZ = {
 	            			x: nowXYZ.x,
 	            			y: nowXYZ.y,
-	            			z: nowXYZ.z
+	            			z: ignoreGravityZ
 	            		}
 	            		return
 	            	}
@@ -56,7 +57,7 @@
 	            			if(lastXYZ[direction] * nowXYZ[direction] < 0) {
 	            				direction = (lastXYZ[direction] < 0 ? '-' : '+') + direction
 	            			}
-            				addLog(nowXYZ[direction] - lastXYZ[direction], dictionary[direction])
+            				addLog(nowXYZ[direction] - lastXYZ[direction], dictionary[])
 	            			fn(e)
 	            			lastTime = Date.now()
 	            		}
