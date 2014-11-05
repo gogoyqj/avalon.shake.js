@@ -36,7 +36,8 @@
 	            	var nowXYZ = e.accelerationIncludingGravity, // 重力加速度
 	            		now, // 当前时间
 	            		pastTime, // 距离上次devicemotion间隔时间
-	            		direction // 最大增量方向
+	            		axle, // 最大增量轴
+	            		direction // 方向
 	            	nowXYZ.z = nowXYZ.z - 9.8 // 忽略重力加速度的Z
 	            	if(lastXYZ.x === null && lastXYZ.y === null && lastXYZ.z === null) {
 	            		lastXYZ = {
@@ -46,18 +47,20 @@
 	            		}
 	            		return
 	            	}
-	            	direction = outLimit(nowXYZ.x - lastXYZ.x, nowXYZ.y - lastXYZ.y, nowXYZ.z - lastXYZ.z)
-	            	if(direction) {
+	            	axle = outLimit(nowXYZ.x - lastXYZ.x, nowXYZ.y - lastXYZ.y, nowXYZ.z - lastXYZ.z)
+	            	if(axle) {
 	            		now = Date.now()
 	            		pastTime = now - lastTime
 	            		// 触发间隔，> 1s触发一次
 	            		if(pastTime > 1000) {
-	            			// else 双向
 	            			// 单向
-	            			if(lastXYZ[direction] * nowXYZ[direction] < 0) {
-	            				direction = (lastXYZ[direction] < 0 ? '-' : '+') + direction
+	            			if(lastXYZ[axle] * nowXYZ[axle] < 0) {
+	            				direction = (lastXYZ[axle] < 0 ? '-' : '+') + axle
+	            			// 双向
+	            			} else {
+	            				direction = axle
 	            			}
-            				addLog(nowXYZ[direction] - lastXYZ[direction], dictionary[direction])
+            				addLog(nowXYZ[axle] - lastXYZ[axle], dictionary[direction])
 	            			fn(e)
 	            			lastTime = Date.now()
 	            		}
