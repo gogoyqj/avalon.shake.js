@@ -54,8 +54,8 @@
 	            		// 触发间隔，> 1s触发一次
 	            		if(pastTime > 1000) {
 	            			// 单向
-	            			if(lastXYZ[axle] * nowXYZ[axle] < 0) {
-	            				direction = (lastXYZ[axle] < 0 ? '-' : '+') + axle
+	            			if(lastXYZ[axle] * nowXYZ[axle] <= 0) {
+	            				direction = (nowXYZ[axle] >= 0 ? '-' : '+') + axle
 	            			// 双向
 	            			} else {
 	            				direction = axle
